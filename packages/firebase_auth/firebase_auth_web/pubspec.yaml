@@ -12,7 +12,10 @@ flutter:
 
 dependencies:
   firebase_auth_platform_interface:
-    path: ../firebase_auth_platform_interface
+    git:
+      url: https://github.com/rash1k/flutterfire.git
+      ref: send_password_reset_code
+      path: packages/firebase_auth/firebase_auth_platform_interface
   flutter:
     sdk: flutter
   flutter_web_plugins:
