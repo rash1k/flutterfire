@@ -377,8 +377,14 @@ public class FirebaseAuthPlugin implements MethodCallHandler, FlutterPlugin, Act
     Map<String, String> arguments = call.arguments();
     String email = arguments.get("email");
 
+
+    ActionCodeSettings actionCodeSettings =
+      ActionCodeSettings.newBuilder()
+        .setUrl(arguments.get("url"))
+        .build();
+
     firebaseAuth
-        .sendPasswordResetEmail(email)
+        .sendPasswordResetEmail(email, actionCodeSettings)
         .addOnCompleteListener(new TaskVoidCompleteListener(result));
   }
 

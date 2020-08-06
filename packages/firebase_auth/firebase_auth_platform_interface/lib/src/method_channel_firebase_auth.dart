@@ -77,10 +77,10 @@ class MethodChannelFirebaseAuth extends FirebaseAuthPlatform {
   }
 
   @override
-  Future<void> sendPasswordResetEmail(String app, String email) {
+  Future<void> sendPasswordResetEmail(String app, String email, [String url]) {
     return channel.invokeMethod<void>(
       'sendPasswordResetEmail',
-      <String, String>{'email': email, 'app': app},
+      <String, String>{'email': email, 'app': app, 'url': url},
     );
   }
 
