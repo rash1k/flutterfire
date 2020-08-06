@@ -9,7 +9,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.1'
+        classpath 'com.android.tools.build:gradle:4.0.1'
     }
 }
 
@@ -23,19 +23,19 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 30
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 21
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
         disable 'InvalidPackage'
     }
     dependencies {
-        implementation 'androidx.annotation:annotation:1.0.0'
+        implementation 'androidx.annotation:annotation:1.1.0'
         implementation 'com.google.firebase:firebase-common:19.3.0'
-        api 'com.google.firebase:firebase-auth:19.2.0'
+        api 'com.google.firebase:firebase-auth:19.3.2'
         api 'com.google.code.gson:gson:2.8.5'
     }
 }

@@ -69,7 +69,7 @@ abstract class FirebaseAuthPlatform extends PlatformInterface {
   }
 
   /// Sends a password reset email to the given [email].
-  Future<void> sendPasswordResetEmail(String app, String email) {
+  Future<void> sendPasswordResetEmail(String app, String email, [String url]) {
     throw UnimplementedError('sendPasswordResetEmail() is not implemented');
   }
 

@@ -243,7 +243,7 @@ class FirebaseAuthWeb extends FirebaseAuthPlatform {
   }
 
   @override
-  Future<void> sendPasswordResetEmail(String app, String email) async {
+  Future<void> sendPasswordResetEmail(String app, String email, [String url]) async {
     final firebase.Auth auth = _getAuth(app);
     await auth.sendPasswordResetEmail(email);
   }
