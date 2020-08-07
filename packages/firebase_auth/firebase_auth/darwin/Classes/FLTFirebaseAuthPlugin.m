@@ -158,7 +158,10 @@ int nextHandle = 0;
     }];
   } else if ([@"sendPasswordResetEmail" isEqualToString:call.method]) {
     NSString *email = call.arguments[@"email"];
+      FIRActionCodeSettings *actionCodeSettings = [FIRActionCodeSettings new];
+      actionCodeSettings.URL = [NSURL URLWithString:call.arguments[@"url"]];
     [[self getAuth:call.arguments] sendPasswordResetWithEmail:email
+                                           actionCodeSettings:actionCodeSettings
                                                    completion:^(NSError *error) {
                                                      [self sendResult:result
                                                             forObject:nil
