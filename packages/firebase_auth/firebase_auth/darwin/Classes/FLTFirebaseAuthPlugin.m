@@ -161,7 +161,7 @@ int nextHandle = 0;
       FIRActionCodeSettings *actionCodeSettings = [FIRActionCodeSettings new];
       actionCodeSettings.URL = [NSURL URLWithString:call.arguments[@"url"]];
     [[self getAuth:call.arguments] sendPasswordResetWithEmail:email
-                                           actionCodeSettings:actionCodeSettings
+                                      actionCodeSettings:actionCodeSettings
                                                    completion:^(NSError *error) {
                                                      [self sendResult:result
                                                             forObject:nil
