@@ -94,11 +94,11 @@ class FirebaseAuth {
   ///  * `ERROR_INVALID_EMAIL` - If the [email] address is malformed.
   ///  * `ERROR_USER_NOT_FOUND` - If there is no user corresponding to the given [email] address.
   Future<void> sendPasswordResetEmail({
-    @required String email,
+    @required String email, String url,
   }) {
     assert(email != null);
     return FirebaseAuthPlatform.instance
-        .sendPasswordResetEmail(app.name, email);
+        .sendPasswordResetEmail(app.name, email, url);
   }
 
   /// Sends a sign in with email link to provided email address.
